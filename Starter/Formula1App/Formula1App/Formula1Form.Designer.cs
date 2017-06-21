@@ -28,57 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.comboBoxCountries = new System.Windows.Forms.ComboBox();
             this.buttonGetRacers = new System.Windows.Forms.Button();
-            this.listViewRacers = new System.Windows.Forms.ListView();
+            this.listBoxRacers = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(380, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBoxCountries
             // 
             this.comboBoxCountries.FormattingEnabled = true;
-            this.comboBoxCountries.Location = new System.Drawing.Point(40, 52);
+            this.comboBoxCountries.Location = new System.Drawing.Point(101, 100);
+            this.comboBoxCountries.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBoxCountries.Name = "comboBoxCountries";
-            this.comboBoxCountries.Size = new System.Drawing.Size(165, 21);
+            this.comboBoxCountries.Size = new System.Drawing.Size(326, 33);
             this.comboBoxCountries.TabIndex = 2;
             // 
             // buttonGetRacers
             // 
-            this.buttonGetRacers.Location = new System.Drawing.Point(280, 52);
+            this.buttonGetRacers.Location = new System.Drawing.Point(560, 100);
+            this.buttonGetRacers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonGetRacers.Name = "buttonGetRacers";
-            this.buttonGetRacers.Size = new System.Drawing.Size(135, 23);
+            this.buttonGetRacers.Size = new System.Drawing.Size(270, 44);
             this.buttonGetRacers.TabIndex = 3;
             this.buttonGetRacers.Text = "Get Racers";
             this.buttonGetRacers.UseVisualStyleBackColor = true;
             this.buttonGetRacers.Click += new System.EventHandler(this.OnGetRacers);
             // 
-            // listViewRacers
+            // listBoxRacers
             // 
-            this.listViewRacers.Location = new System.Drawing.Point(40, 117);
-            this.listViewRacers.Name = "listViewRacers";
-            this.listViewRacers.Size = new System.Drawing.Size(253, 278);
-            this.listViewRacers.TabIndex = 4;
-            this.listViewRacers.UseCompatibleStateImageBehavior = false;
+            this.listBoxRacers.FormattingEnabled = true;
+            this.listBoxRacers.ItemHeight = 25;
+            this.listBoxRacers.Location = new System.Drawing.Point(101, 234);
+            this.listBoxRacers.Name = "listBoxRacers";
+            this.listBoxRacers.Size = new System.Drawing.Size(427, 529);
+            this.listBoxRacers.TabIndex = 4;
             // 
             // Formula1Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 428);
-            this.Controls.Add(this.listViewRacers);
+            this.ClientSize = new System.Drawing.Size(1032, 823);
+            this.Controls.Add(this.listBoxRacers);
             this.Controls.Add(this.buttonGetRacers);
             this.Controls.Add(this.comboBoxCountries);
-            this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Formula1Form";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -86,10 +78,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBoxCountries;
         private System.Windows.Forms.Button buttonGetRacers;
-        private System.Windows.Forms.ListView listViewRacers;
+        private System.Windows.Forms.ListBox listBoxRacers;
     }
 }
 

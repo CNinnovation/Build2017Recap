@@ -43,10 +43,16 @@ namespace Formula1App
 
         private void OnGetRacers(object sender, EventArgs e)
         {
-            IEnumerable<string> racers = service.GetRacersByCountry(comboBoxCountries.SelectedItem.ToString());
-            listViewRacers.Items.Clear();
-            ListViewItem[] items = racers.Select(r => new ListViewItem(r)).ToArray();
-            listViewRacers.Items.AddRange(items);
+            string selectedCountry = comboBoxCountries.SelectedItem?.ToString();
+            if (selectedCountry == null)
+            {
+                MessageBox.Show("Select a country first");
+                return;
+            }
+            IEnumerable<string> racers = service.GetRacersByCountry(selectedCountry);
+            listBoxRacers.Items.Clear();
+            listBoxRacers.Items.AddRange(racers.ToArray());
+
         }
     }
 }

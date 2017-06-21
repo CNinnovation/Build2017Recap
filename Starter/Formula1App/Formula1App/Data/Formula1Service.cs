@@ -15,13 +15,22 @@ namespace Formula1App.Data
             formula1DataSet.ReadXml("./racers.xml");
         }
 
-        public IEnumerable<string> GetRacersByCountry(string country)
+        public IEnumerable<string> GetRacersByCountry2(string country)
         {
             DataTable racers = formula1DataSet.Tables["Racers"];
             var query = from racer in racers.AsEnumerable()
                         where racer.Field<string>("Nationality") == country
                         select racer.Field<string>("FirstName") + " " + racer.Field<string>("LastName");
             return query.ToList();                
+        }
+
+        public IEnumerable<string> GetRacersByCountry(string country)
+        {
+            DataTable racers = formula1DataSet.Tables["Racers"];
+
+            var query = racers.Rows.Cast<DataRow>().Where(row => row["Nationality"].ToString() == country)
+                .Select(row => row["FirstName"] + " " + row["LastName"]);
+            return query.ToList();
         }
     }
 }
